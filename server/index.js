@@ -34,5 +34,5 @@ app.get('/api/data', (req, res) => {
 
 const PORT = 3001;
 app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port1 ${PORT}`);
 });
