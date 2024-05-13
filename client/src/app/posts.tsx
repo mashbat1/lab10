@@ -9,22 +9,22 @@ type Post = {
 };
 
 const PostsPage = () => {
-     const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<Post[]>([]);
 
-  // useEffect(() => {
-  //   fetch("/api/blogs")
-  //     .then((res) => res.json())
-  //     .then((data) => {
-  //       if (data.message === "OK") {
-  //         setPosts(data.posts);
-  //       } else {
-  //         console.error("Error fetching posts:", data.message);
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error("Error fetching posts:", error);
-  //     });
-  // }, []);
+  useEffect(() => {
+    fetch("/api/blogs")
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.message === "OK") {
+          setPosts(data.posts);
+        } else {
+          console.error("Error fetching posts:", data.message);
+        }
+      })
+      .catch((error) => {
+        console.error("Error fetching posts:", error);
+      });
+  }, []);
 
   return (
     <div>
